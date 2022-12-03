@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Corch\\source\\repos\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj": {}
+    "C:\\Users\\Corch\\OneDrive\\Escritorio\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Corch\\source\\repos\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj": {
+    "C:\\Users\\Corch\\OneDrive\\Escritorio\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Corch\\source\\repos\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj",
+        "projectUniqueName": "C:\\Users\\Corch\\OneDrive\\Escritorio\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj",
         "projectName": "AGENDA-TELEFONICA",
-        "projectPath": "C:\\Users\\Corch\\source\\repos\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj",
+        "projectPath": "C:\\Users\\Corch\\OneDrive\\Escritorio\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj",
         "packagesPath": "C:\\Users\\Corch\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Corch\\source\\repos\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\obj\\",
+        "outputPath": "C:\\Users\\Corch\\OneDrive\\Escritorio\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Corch\\AppData\\Roaming\\NuGet\\NuGet.Config",

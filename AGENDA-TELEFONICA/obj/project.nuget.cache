@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6kp0VEsxQxJZAZm1V4abeSiXsyyAAkrT4h7HSl4mRaKGI9H5m4qI1FTkvKIc4iMRvwj60jvQhAGZrsLOmXa/rQ==",
+  "dgSpecHash": "AKpX1hCAaZ2ffLxWW+3Id0IizxnH69+RoUCcKjHIly0Kh0a91xpQ5nNmg8R9LMiqHVlXwoFG9o3PIA7oJjB1Jw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Corch\\source\\repos\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj",
+  "projectFilePath": "C:\\Users\\Corch\\OneDrive\\Escritorio\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Corch\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Corch\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
