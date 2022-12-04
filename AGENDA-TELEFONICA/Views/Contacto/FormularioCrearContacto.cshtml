@@ -1,5 +1,21 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model TODO_MVC_NETCORE.DTOs.CreateContactoDTO
+
 @{
 }
+<div class="col-4">
+<form asp-action="CreateContacto">
+  <div class="mb-3">
+    <label for="NombreContacto" class="form-label">Nombre Contacto</label>
+    <input type="text" asp-for="NombreContacto" class="form-control" id="NombreContacto" >
+  </div>
+  <div class="mb-3">
+    <label for="Apellido" class="form-label">Apellido Contacto</label>
+    <input type="text" asp-for="ApellidoContacto" class="form-control" id="ApellidoContacto">
+  </div>
+  <div class="mb-3">
+    <label for="TelefonoContacto" class="form-label">Telefono Contacto</label>
+    <input type="text" asp-for="TelefonoContacto" class="form-control" id="TelefonoContacto" >
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar Contacto Nuevo</button>
+</form>
+</div>

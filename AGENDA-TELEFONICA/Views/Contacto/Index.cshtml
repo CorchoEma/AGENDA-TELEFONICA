@@ -1,5 +1,55 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using TODO_MVC_NETCORE.DTOs
+@model IEnumerable<ResponseContactoDTO>
+
 @{
 }
+
+<h1>MIS Contactos</h1>
+<div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre Contacto</th>
+      <th scope="col">Apellido Contacto</th>
+      <th scope="col">Telefono Contacto</th>
+      <th scope="col">Fecha de creacion del Contacto</th>
+    </tr>
+  </thead>
+  <tbody>
+     @foreach(var c in Model){
+    <tr>
+      <td>@Html.DisplayFor(m => c.NombreContacto)</td>
+      <td>@Html.DisplayFor(m => c.ApellidoContacto)</td>
+      <td>@Html.DisplayFor(m => c.TelefonoContacto)</td>
+      <td>@Html.DisplayFor(m => c.FechaCreacionContacto)</td>
+      <td>
+      <a asp-action="Borrar" asp-route-id="@c.IdContacto" >
+      <i class="fa fa-trash fa-1x" aria-hidden="true" ></i>
+      </a>
+      <a asp-action="FormularioEditarContacto" asp-route-id="@c.IdContacto" >
+      <i class="fa fa-pencil fa-1x m-lg-2" aria-hidden="true"></i>
+      </a>
+      </td>
+    </tr>
+    }
+  </tbody>
+  
+</table>
+</div>
+
+@if (Model.Count() == 0)
+{
+    <div class="col-3">
+<a class="btn btn-danger mt-3" asp-area="" asp-controller="Contacto" asp-action="FormularioCrearContacto">Agregar Contacto (No tienes contactos)</a>
+        </div>
+    }
+    else
+    {
+            <div class="col-3">
+<a class="btn btn-primary mt-3" asp-area="" asp-controller="Contacto" asp-action="FormularioCrearContacto">Agregar Contacto</a>
+</div>
+    }
+
+
+</>
+

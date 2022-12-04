@@ -7,13 +7,13 @@ namespace TODO_MVC_NETCORE.DTOs
         public ResponseContactoDTO() { }
         public ResponseContactoDTO(Contacto c)
         {
-            Id = c.Id;
+            IdContacto = c.Id;
             NombreContacto = c.NombreContacto;
             ApellidoContacto = c.ApellidoContacto;
             TelefonoContacto = c.TelefonoContacto;
             FechaCreacionContacto = c.FechaCreacionContacto;
         }
-        public int Id { get; set; }
+        public int IdContacto { get; set; }
         public string NombreContacto { get; set; }
         public string ApellidoContacto { get; set; }
         public int TelefonoContacto { get; set; }
