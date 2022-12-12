@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using TODO_MVC_NETCORE.DTOs;
 using TODO_MVC_NETCORE.Models;
 using TODO_MVC_NETCORE.Servicios.Interfaces;
@@ -8,9 +9,12 @@ namespace TODO_MVC_NETCORE.Servicios
     public class ContactoServices : IContacto
     {
         private readonly AppDbContext _context;
-        public ContactoServices(AppDbContext context)
+        private readonly UserManager<IdentityUser> _userManager;
+
+        public ContactoServices(AppDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public ResponseContactoDTO getContacto(int idContacto)
@@ -23,10 +27,10 @@ namespace TODO_MVC_NETCORE.Servicios
             return contacto;
         }
 
-        public IEnumerable<ResponseContactoDTO> getContactos()
+        public IEnumerable<ResponseContactoDTO> getContactos(string idUser)
         {
-            var listadoContactos = _context
-                .Contacto
+            var listadoContactos = _context.Contacto
+                .Where(c => c.idUser.Equals(idUser))
                 .Select(c => new ResponseContactoDTO(c))
                 .ToList();
 
@@ -58,15 +62,17 @@ namespace TODO_MVC_NETCORE.Servicios
   
         }
 
-        public bool crearContacto(CreateContactoDTO nuevoContacto)
+        public bool crearContacto(CreateContactoDTO nuevoContacto, string idUser)
         {
+            var user = _userManager.FindByIdAsync(idUser);
 
             var c = new Contacto()
             {
                 NombreContacto = nuevoContacto.NombreContacto,
                 ApellidoContacto = nuevoContacto.ApellidoContacto,
                 TelefonoContacto = nuevoContacto.TelefonoContacto,
-                FechaCreacionContacto = DateTime.Now
+                FechaCreacionContacto = DateTime.Now,
+                idUser = user.Result.Id
             };
 
             var result = _context.Contacto.Add(c);
@@ -79,6 +85,7 @@ namespace TODO_MVC_NETCORE.Servicios
             var contacto = _context.Contacto
                   .Where(c => c.Id == uc.Id)
                   .FirstOrDefault();
+
             if(contacto != null)
             {
                 contacto.NombreContacto = uc.NombreContacto;

@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using TODO_MVC_NETCORE.DTOs;
 using TODO_MVC_NETCORE.Servicios.Interfaces;
 
@@ -8,14 +11,20 @@ namespace TODO_MVC_NETCORE.Controllers
     public class ContactoController : Controller
     {
         private readonly IContacto _contactoServices;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public ContactoController(IContacto contactoServices)
+        public ContactoController(IContacto contactoServices, UserManager<IdentityUser> userManager)
         {
             _contactoServices = contactoServices;
+            _userManager = userManager;
         }
+
+        [Authorize]
         public IActionResult Index()
         {
-            var response = _contactoServices.getContactos();
+            var idUserCurrent = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var response = _contactoServices.getContactos(idUserCurrent);
             return View(response);
         }
 
@@ -28,9 +37,9 @@ namespace TODO_MVC_NETCORE.Controllers
         [HttpPost]
         public IActionResult CreateContacto(CreateContactoDTO contacto)
         {
-  
-            
-            var response = _contactoServices.crearContacto(contacto);
+            var idUserCurrent = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var response = _contactoServices.crearContacto(contacto, idUserCurrent);
             return RedirectToAction("Index");
         }
 
