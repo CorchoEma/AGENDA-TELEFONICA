@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Corch\\OneDrive\\Escritorio\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj": {}
+    "C:\\Users\\Gustavo\\Desktop\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Corch\\OneDrive\\Escritorio\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj": {
+    "C:\\Users\\Gustavo\\Desktop\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Corch\\OneDrive\\Escritorio\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj",
+        "projectUniqueName": "C:\\Users\\Gustavo\\Desktop\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj",
         "projectName": "AGENDA-TELEFONICA",
-        "projectPath": "C:\\Users\\Corch\\OneDrive\\Escritorio\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj",
-        "packagesPath": "C:\\Users\\Corch\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Corch\\OneDrive\\Escritorio\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\obj\\",
+        "projectPath": "C:\\Users\\Gustavo\\Desktop\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA.csproj",
+        "packagesPath": "C:\\Users\\Gustavo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gustavo\\Desktop\\GitHub\\CorchoEma\\AGENDA-TELEFONICA\\AGENDA-TELEFONICA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Corch\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gustavo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +73,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -85,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

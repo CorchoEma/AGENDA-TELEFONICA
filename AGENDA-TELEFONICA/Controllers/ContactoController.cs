@@ -20,11 +20,11 @@ namespace TODO_MVC_NETCORE.Controllers
         }
 
         [Authorize]
-        public IActionResult Index()
+        public async Task <IActionResult> Index()
         {
             var idUserCurrent = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var response = _contactoServices.getContactos(idUserCurrent);
+            var response = await _contactoServices.getContactos(idUserCurrent);
             return View(response);
         }
 
@@ -35,31 +35,31 @@ namespace TODO_MVC_NETCORE.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateContacto(CreateContactoDTO contacto)
+        public async Task <IActionResult> CreateContacto(CreateContactoDTO contacto)
         {
             var idUserCurrent = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var response = _contactoServices.crearContacto(contacto, idUserCurrent);
+            var response = await _contactoServices.crearContacto(contacto, idUserCurrent);
             return RedirectToAction("Index");
         }
 
         
-        public IActionResult Borrar(int id)
+        public async Task <IActionResult> Borrar(int id)
         {
-            var response = _contactoServices.borrarContacto(id);
+            var response = await _contactoServices.borrarContacto(id);
 
             return RedirectToAction("Index");
         }
 
        
-        public IActionResult FormularioEditarContacto(int id)
+        public async Task <IActionResult> FormularioEditarContacto(int id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var contacto = _contactoServices.getContacto(id);
+            var contacto = await _contactoServices.getContacto(id);
 
             if (contacto == null)
             {
@@ -72,9 +72,9 @@ namespace TODO_MVC_NETCORE.Controllers
 
         [HttpPost, ActionName("FormularioEditarContacto")]
         [ValidateAntiForgeryToken]
-        public IActionResult EditPost(UpdateContactoDTO update)
+        public async Task <IActionResult> EditPost(UpdateContactoDTO update)
         {
-            var updateContacto = _contactoServices.updateContacto(update);
+            var updateContacto = await _contactoServices.updateContacto(update);
 
             if (updateContacto)
             {

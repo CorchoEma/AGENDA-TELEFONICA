@@ -17,29 +17,29 @@ namespace TODO_MVC_NETCORE.Servicios
             _userManager = userManager;
         }
 
-        public ResponseContactoDTO getContacto(int idContacto)
+        public async Task <ResponseContactoDTO> getContacto(int idContacto)
         {
-            var contacto = _context.Contacto
+            var contacto = await _context.Contacto
                  .Where(c => c.Id == idContacto)
                  .Select(c => new ResponseContactoDTO(c))
-                 .FirstOrDefault();
+                 .FirstOrDefaultAsync();
 
             return contacto;
         }
 
-        public IEnumerable<ResponseContactoDTO> getContactos(string idUser)
+        public async Task <IEnumerable<ResponseContactoDTO>> getContactos(string idUser)
         {
-            var listadoContactos = _context.Contacto
+            var listadoContactos = await _context.Contacto
                 .Where(c => c.idUser.Equals(idUser))
                 .Select(c => new ResponseContactoDTO(c))
-                .ToList();
+                .ToListAsync();
 
             return listadoContactos;
         }
 
-        public MensajeContactoDTO borrarContacto( int idContacto ) 
+        public async Task <MensajeContactoDTO> borrarContacto( int idContacto ) 
         {
-            var contacto = _context.Contacto.Where(t => t.Id == idContacto).FirstOrDefault();
+            var contacto = await _context.Contacto.Where(t => t.Id == idContacto).FirstOrDefaultAsync();
 
             if(contacto != null)
             {
@@ -62,9 +62,9 @@ namespace TODO_MVC_NETCORE.Servicios
   
         }
 
-        public bool crearContacto(CreateContactoDTO nuevoContacto, string idUser)
+        public async Task <bool> crearContacto(CreateContactoDTO nuevoContacto, string idUser)
         {
-            var user = _userManager.FindByIdAsync(idUser);
+            var user = await _userManager.FindByIdAsync(idUser);
 
             var c = new Contacto()
             {
@@ -72,7 +72,7 @@ namespace TODO_MVC_NETCORE.Servicios
                 ApellidoContacto = nuevoContacto.ApellidoContacto,
                 TelefonoContacto = nuevoContacto.TelefonoContacto,
                 FechaCreacionContacto = DateTime.Now,
-                idUser = user.Result.Id
+                idUser = user.Id
             };
 
             var result = _context.Contacto.Add(c);
@@ -80,11 +80,11 @@ namespace TODO_MVC_NETCORE.Servicios
             return true;
         }
 
-        public bool updateContacto(UpdateContactoDTO uc)
+        public async Task <bool> updateContacto(UpdateContactoDTO uc)
         {
-            var contacto = _context.Contacto
+            var contacto = await _context.Contacto
                   .Where(c => c.Id == uc.Id)
-                  .FirstOrDefault();
+                  .FirstOrDefaultAsync();
 
             if(contacto != null)
             {
