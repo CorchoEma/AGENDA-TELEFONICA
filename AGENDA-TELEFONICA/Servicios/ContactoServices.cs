@@ -75,7 +75,7 @@ namespace TODO_MVC_NETCORE.Servicios
                 idUser = user.Id
             };
 
-            var result = _context.Contacto.Add(c);
+            var result = await _context.Contacto.AddAsync(c);
             _context.SaveChanges();
             return true;
         }
